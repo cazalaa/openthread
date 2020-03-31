@@ -66,6 +66,13 @@ SUBDIRS                                += \
     $(NULL)
 endif
 
+if OPENTHREAD_PLATFORM_MGM210P
+SUBDIRS                                += \
+    silabs                                \
+    jlink                                 \
+    $(NULL)
+endif
+
 if OPENTHREAD_PLATFORM_NRF52811
 SUBDIRS                                += \
     NordicSemiconductor                   \
