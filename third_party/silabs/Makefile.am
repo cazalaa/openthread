@@ -46,6 +46,11 @@ lib_LIBRARIES                                                                 = 
     $(NULL)
 endif
 
+if OPENTHREAD_EXAMPLES_MGM210P
+lib_LIBRARIES                                                                 = \
+    libsilabs-mgm210p-sdk.a                                                   \
+    $(NULL)
+endif
 # Do not enable -Wconversion for Silicon Labs SDK sources
 override CFLAGS    := $(filter-out -Wconversion,$(CFLAGS))
 override CXXFLAGS  := $(filter-out -Wconversion,$(CXXFLAGS))
@@ -126,6 +131,12 @@ SILABS_EFR32MG21_CPPFLAGS                                                     = 
     -I$(SDK_SRC_DIR)/platform/radio/rail_lib/chip/efr32/efr32xg2x               \
     $(NULL)
 
+SILABS_MGM210P_CPPFLAGS                                                     = \
+		-I$(SDK_SRC_DIR)/hardware/kit/MGM21_$(BOARD)/config                     \
+		-I$(SDK_SRC_DIR)/platform/Device/SiliconLabs/MGM21/Include             \
+		-I$(SDK_SRC_DIR)/platform/radio/rail_lib/chip/efr32/efr32xg2x               \
+		$(NULL)
+
 SILABS_COMMON_SOURCES                                                                   = \
     rail_config/rail_config.c                                                             \
     gecko_sdk_suite/v2.7/hardware/kit/common/bsp/bsp_bcc.c                                \
@@ -182,6 +193,15 @@ SILABS_EFR32MG21_SOURCES                                                        
     gecko_sdk_suite/v2.7/util/third_party/mbedtls/sl_crypto/src/se_management.c                 \
     $(NULL)
 
+SILABS_MGM210P_SOURCES                                                                      = \
+	 gecko_sdk_suite/v2.7/platform/Device/SiliconLabs/MGM21/Source/system_mgm21.c        \
+	 gecko_sdk_suite/v2.7/platform/Device/SiliconLabs/MGM21/Source/GCC/startup_mgm21.c   \
+	 gecko_sdk_suite/v2.7/platform/emlib/src/em_se.c                                             \
+	 gecko_sdk_suite/v2.7/util/third_party/mbedtls/sl_crypto/src/se_trng.c                       \
+	 gecko_sdk_suite/v2.7/util/third_party/mbedtls/sl_crypto/src/se_aes.c                        \
+	 gecko_sdk_suite/v2.7/util/third_party/mbedtls/sl_crypto/src/se_management.c                 \
+	 $(NULL)
+
 libsilabs_efr32mg12_sdk_a_CPPFLAGS                                                            = \
     $(COMMONCPPFLAGS)                                                                           \
     $(SILABS_EFR32MG12_CPPFLAGS)                                                                \
@@ -212,8 +232,18 @@ libsilabs_efr32mg21_sdk_a_SOURCES                                               
     $(SILABS_EFR32MG21_SOURCES)                                                                 \
     $(NULL)
 
+libsilabs_mgm210p_sdk_a_CPPFLAGS                                                            = \
+		$(COMMONCPPFLAGS)                                                                           \
+		$(SILABS_EFR32MG21_CPPFLAGS)                                                                \
+		$(NULL)
+
+libsilabs_mgm210p_sdk_a_SOURCES                                                             = \
+		$(SILABS_COMMON_SOURCES)                                                                    \
+	  $(SILABS_MGM210P_SOURCES)                                                                 \
+		$(NULL)
+
 noinst_HEADERS                                                                                = \
-        $(NULL) 
+        $(NULL)
 
 
 include $(abs_top_nlbuild_autotools_dir)/automake/post.am
