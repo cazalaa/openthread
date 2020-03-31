@@ -787,7 +787,7 @@ AC_MSG_CHECKING([whether to build examples])
 
 AC_ARG_WITH(examples,
     [AS_HELP_STRING([--with-examples=TARGET],
-        [Build example applications for one of: simulation, cc1352, cc2538, cc2650, cc2652, efr32mg12, efr32mg13, efr32mg21,
+        [Build example applications for one of: simulation, cc1352, cc2538, cc2650, cc2652, efr32mg12, efr32mg13, efr32mg21, mgm210p,
          gp712, jn5189, kw41z, nrf52811, nrf52833, nrf52840, qpg6095, samr21 @<:@default=no@:>@.
          Note that building example applications also builds the associated OpenThread platform libraries
          and any third_party libraries needed to support the examples.])],
@@ -795,7 +795,7 @@ AC_ARG_WITH(examples,
         case "${with_examples}" in
         no)
             ;;
-        simulation|cc1352|cc2538|cc2650|cc2652|efr32mg12|efr32mg13|efr32mg21|gp712|jn5189|kw41z|nrf52811|nrf52833|nrf52840|qpg6095|samr21)
+        simulation|cc1352|cc2538|cc2650|cc2652|efr32mg12|efr32mg13|efr32mg21|mgm210p|gp712|jn5189|kw41z|nrf52811|nrf52833|nrf52840|qpg6095|samr21)
             ;;
         *)
             AC_MSG_RESULT(ERROR)
@@ -815,6 +815,7 @@ AM_CONDITIONAL([OPENTHREAD_EXAMPLES_CC2652],    [test "${with_examples}" = "cc26
 AM_CONDITIONAL([OPENTHREAD_EXAMPLES_EFR32MG12], [test "${with_examples}" = "efr32mg12"])
 AM_CONDITIONAL([OPENTHREAD_EXAMPLES_EFR32MG13], [test "${with_examples}" = "efr32mg13"])
 AM_CONDITIONAL([OPENTHREAD_EXAMPLES_EFR32MG21], [test "${with_examples}" = "efr32mg21"])
+AM_CONDITIONAL([OPENTHREAD_EXAMPLES_MGM210P], [test "${with_examples}" = "mgm210p"])
 AM_CONDITIONAL([OPENTHREAD_EXAMPLES_GP712],     [test "${with_examples}" = "gp712"])
 AM_CONDITIONAL([OPENTHREAD_EXAMPLES_JN5189],    [test "${with_examples}" = "jn5189"])
 AM_CONDITIONAL([OPENTHREAD_EXAMPLES_KW41Z],     [test "${with_examples}" = "kw41z"])
@@ -846,11 +847,11 @@ AC_MSG_CHECKING([whether to build platform libraries])
 AC_ARG_WITH(platform,
     [AS_HELP_STRING([--with-platform=TARGET],
         [Build OpenThread platform libraries for one of: cc1352, cc2538, cc2650, cc2652,
-         efr32mg12, efr32mg13, efr32mg21, gp712, jn5189, kw41z, nrf52811, nrf52833, nrf52840, posix, qpg6095, samr21, simulation @<:@default=simulation@:>@.])],
+         efr32mg12, efr32mg13, efr32mg21, mgm210p, gp712, jn5189, kw41z, nrf52811, nrf52833, nrf52840, posix, qpg6095, samr21, simulation @<:@default=simulation@:>@.])],
     [
         # Make sure the given target is valid.
         case "${with_platform}" in
-        no|cc1352|cc2538|cc2650|cc2652|efr32mg12|efr32mg13|efr32mg21|gp712|jn5189|kw41z|nrf52811|nrf52833|nrf52840|posix|qpg6095|samr21|simulation)
+        no|cc1352|cc2538|cc2650|cc2652|efr32mg12|efr32mg13|efr32mg21|mgm210p|gp712|jn5189|kw41z|nrf52811|nrf52833|nrf52840|posix|qpg6095|samr21|simulation)
             ;;
         *)
             AC_MSG_RESULT(ERROR)
@@ -888,6 +889,7 @@ AM_CONDITIONAL([OPENTHREAD_PLATFORM_CC2652],    [test "${with_platform}" = "cc26
 AM_CONDITIONAL([OPENTHREAD_PLATFORM_EFR32MG12], [test "${with_platform}" = "efr32mg12"])
 AM_CONDITIONAL([OPENTHREAD_PLATFORM_EFR32MG13], [test "${with_platform}" = "efr32mg13"])
 AM_CONDITIONAL([OPENTHREAD_PLATFORM_EFR32MG21], [test "${with_platform}" = "efr32mg21"])
+AM_CONDITIONAL([OPENTHREAD_PLATFORM_MGM210P], [test "${with_platform}" = "mgm210p"])
 AM_CONDITIONAL([OPENTHREAD_PLATFORM_GP712],     [test "${with_platform}" = "gp712"])
 AM_CONDITIONAL([OPENTHREAD_PLATFORM_JN5189],    [test "${with_platform}" = "jn5189"])
 AM_CONDITIONAL([OPENTHREAD_PLATFORM_KW41Z],     [test "${with_platform}" = "kw41z"])
@@ -1054,6 +1056,10 @@ examples/platforms/efr32mg21/Makefile
 examples/platforms/efr32mg21/sleepy-demo/Makefile
 examples/platforms/efr32mg21/sleepy-demo/sleepy-demo-ftd/Makefile
 examples/platforms/efr32mg21/sleepy-demo/sleepy-demo-mtd/Makefile
+examples/platforms/mgm210p/Makefile
+examples/platforms/mgm210p/sleepy-demo/Makefile
+examples/platforms/mgm210p/sleepy-demo/sleepy-demo-ftd/Makefile
+examples/platforms/mgm210p/sleepy-demo/sleepy-demo-mtd/Makefile
 examples/platforms/gp712/Makefile
 examples/platforms/jn5189/Makefile
 examples/platforms/kw41z/Makefile
