@@ -232,15 +232,15 @@ libsilabs_efr32mg21_sdk_a_SOURCES                                               
     $(SILABS_EFR32MG21_SOURCES)                                                                 \
     $(NULL)
 
-libsilabs_mgm210p_sdk_a_CPPFLAGS                                                            = \
-		$(COMMONCPPFLAGS)                                                                           \
-		$(SILABS_EFR32MG21_CPPFLAGS)                                                                \
-		$(NULL)
+libsilabs_mgm210p_sdk_a_CPPFLAGS                                                              = \
+    $(COMMONCPPFLAGS)                                                                           \
+    $(SILABS_MGM210P_CPPFLAGS)                                                                  \
+    $(NULL)
 
-libsilabs_mgm210p_sdk_a_SOURCES                                                             = \
-		$(SILABS_COMMON_SOURCES)                                                                    \
-	  $(SILABS_MGM210P_SOURCES)                                                                 \
-		$(NULL)
+libsilabs_mgm210p_sdk_a_SOURCES                                                               = \
+    $(SILABS_COMMON_SOURCES)                                                                    \
+    $(SILABS_MGM210P_SOURCES)                                                                   \
+    $(NULL)
 
 noinst_HEADERS                                                                                = \
         $(NULL)
