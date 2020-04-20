@@ -49,6 +49,7 @@ CPPFLAGS_COMMON                                                              += 
     -Wno-sign-compare                                                           \
     -I$(top_srcdir)/examples/platforms                                          \
     -I$(top_srcdir)/examples/platforms/mgm210p/$(EFR32_BOARD_DIR)             \
+    -I$(SDK_SRC_DIR)/hardware/module/config                                     \
     -I$(top_srcdir)/include                                                     \
     -I$(top_srcdir)/src/core                                                    \
     -I$(top_srcdir)/third_party/silabs/rail_config                              \
