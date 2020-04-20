@@ -52,7 +52,7 @@ libopenthread_mgm210p_a_CPPFLAGS                                            = \
     -DPLATFORM_HEADER=\"platform/base/hal/micro/cortexm3/compiler/gcc.h\"       \
     -Wno-sign-compare                                                           \
     -I$(top_srcdir)/examples/platforms                                          \
-    -I$(top_srcdir)/examples/platforms/mgm210p/$(EFR32_BOARD_DIR)             \
+    -I$(top_srcdir)/examples/platforms/mgm210p/$(EFR32_BOARD_DIR)               \
     -I$(top_srcdir)/include                                                     \
     -I$(top_srcdir)/src/core                                                    \
     -I$(top_srcdir)/third_party/silabs/rail_config                              \
@@ -62,6 +62,7 @@ libopenthread_mgm210p_a_CPPFLAGS                                            = \
     -I$(SDK_SRC_DIR)/hardware/kit/MGM21_$(BOARD)/config                         \
     -I$(SDK_SRC_DIR)/platform/base/hal/micro/cortexm3/efm32                     \
     -I$(SDK_SRC_DIR)/platform/base/hal/micro/cortexm3/efm32/config              \
+    -I$(SDK_SRC_DIR)/hardware/module/config                                     \
     -I$(SDK_SRC_DIR)/platform/common/inc                                        \
     -I$(SDK_SRC_DIR)/platform/CMSIS/Include                                     \
     -I$(SDK_SRC_DIR)/platform/Device/SiliconLabs/MGM21/Include                  \
