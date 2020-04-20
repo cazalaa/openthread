@@ -105,7 +105,6 @@
     {                  \
         0, 1           \
     }
-#define BSP_LED_POLARITY (1)
 #define BSP_LED_COUNT                                 (2U)
 #define BSP_LED_INIT                                  { { BSP_LED0_PORT, BSP_LED0_PIN }, { BSP_LED1_PORT, BSP_LED1_PIN } }
 #define BSP_LED_POLARITY                              (0)
@@ -258,18 +257,6 @@
 // [UARTNCP]$
 
 // $[USART0]
-#define PORTIO_USART0_CTS_PIN (4U)
-#define PORTIO_USART0_CTS_PORT (gpioPortA)
-
-#define PORTIO_USART0_RTS_PIN (1U)
-#define PORTIO_USART0_RTS_PORT (gpioPortC)
-
-#define PORTIO_USART0_RX_PIN (6U)
-#define PORTIO_USART0_RX_PORT (gpioPortA)
-
-#define PORTIO_USART0_TX_PIN (5U)
-#define PORTIO_USART0_TX_PORT (gpioPortA)
-
 #define HAL_USART0_ENABLE (1)
 
 #define PORTIO_USART0_CTS_PIN                         (2U)
