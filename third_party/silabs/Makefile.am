@@ -82,6 +82,7 @@ COMMONCPPFLAGS                                                                = 
     -I$(top_srcdir)/src/core                                                    \
     -I$(top_srcdir)/third_party/silabs/rail_config                              \
     -I$(SDK_SRC_DIR)                                                            \
+    -I$(SDK_SRC_DIR)/hardware/module/config                                     \
     -I$(SDK_SRC_DIR)/hardware/kit/common/bsp                                    \
     -I$(SDK_SRC_DIR)/hardware/kit/common/drivers                                \
     -I$(SDK_SRC_DIR)/platform/base/hal/micro/cortexm3/efm32                     \
