@@ -40,11 +40,18 @@
 // [BUTTON]$
 
 // $[CMU]
+#define HAL_CLK_HFCLK_SOURCE (HAL_CLK_HFCLK_SOURCE_HFXO)
+#define BSP_CLK_LFXO_PRESENT (1)
+#define HAL_CLK_EM4CLK_SOURCE (HAL_CLK_LFCLK_SOURCE_LFRCO)
+#define HAL_CLK_EM23CLK_SOURCE (HAL_CLK_LFCLK_SOURCE_LFRCO)
 #define BSP_CLK_HFXO_CTUNE                            (133)
 #define BSP_CLK_LFXO_PRESENT                          (1)
+#define HAL_CLK_RTCCCLK_SOURCE (HAL_CLK_LFCLK_SOURCE_LFRCO)
 #define BSP_CLK_LFXO_INIT                              CMU_LFXOINIT_DEFAULT
 #define BSP_CLK_LFXO_FREQ                             (32768U)
 #define BSP_CLK_LFXO_CTUNE                            (79U)
+#define BSP_CLK_HFXO_FREQ (38400000UL)
+#define BSP_CLK_HFXO_INIT CMU_HFXOINIT_DEFAULT
 // [CMU]$
 
 // $[COEX]
@@ -94,7 +101,11 @@
 
 #define BSP_LED1_PIN                                  (1U)
 #define BSP_LED1_PORT                                 (gpioPortB)
-
+#define HAL_LED_ENABLE \
+    {                  \
+        0, 1           \
+    }
+#define BSP_LED_POLARITY (1)
 #define BSP_LED_COUNT                                 (2U)
 #define BSP_LED_INIT                                  { { BSP_LED0_PORT, BSP_LED0_PIN }, { BSP_LED1_PORT, BSP_LED1_PIN } }
 #define BSP_LED_POLARITY                              (0)
@@ -130,15 +141,26 @@
 #define PORTIO_PTI_DOUT_PIN                           (4U)
 #define PORTIO_PTI_DOUT_PORT                          (gpioPortC)
 
+#define HAL_PTI_ENABLE (1)
+
 #define BSP_PTI_DFRAME_PIN                            (5U)
 #define BSP_PTI_DFRAME_PORT                           (gpioPortC)
 
 #define BSP_PTI_DOUT_PIN                              (4U)
 #define BSP_PTI_DOUT_PORT                             (gpioPortC)
 
+#define HAL_PTI_MODE (HAL_PTI_MODE_UART)
+#define HAL_PTI_BAUD_RATE (1600000UL)
 // [PTI]$
 
 // $[SERIAL]
+#define HAL_SERIAL_USART0_ENABLE (0)
+#define HAL_SERIAL_LEUART0_ENABLE (0)
+#define HAL_SERIAL_USART1_ENABLE (0)
+#define HAL_SERIAL_USART2_ENABLE (0)
+#define HAL_SERIAL_USART3_ENABLE (0)
+#define HAL_SERIAL_RXWAKE_ENABLE (0)
+
 #define BSP_SERIAL_APP_PORT                           (HAL_SERIAL_PORT_USART0)
 #define BSP_SERIAL_APP_TX_PIN                         (5U)
 #define BSP_SERIAL_APP_TX_PORT                        (gpioPortA)
@@ -152,6 +174,12 @@
 #define BSP_SERIAL_APP_RTS_PIN                        (1U)
 #define BSP_SERIAL_APP_RTS_PORT                       (gpioPortC)
 
+#define HAL_SERIAL_APP_RX_QUEUE_SIZE (128UL)
+#define HAL_SERIAL_APP_BAUD_RATE (115200UL)
+#define HAL_SERIAL_APP_RXSTOP (16UL)
+#define HAL_SERIAL_APP_RXSTART (16UL)
+#define HAL_SERIAL_APP_TX_QUEUE_SIZE (128UL)
+#define HAL_SERIAL_APP_FLOW_CONTROL (HAL_USART_FLOW_CONTROL_HWUART)
 // [SERIAL]$
 
 // $[SPIDISPLAY]
@@ -230,6 +258,20 @@
 // [UARTNCP]$
 
 // $[USART0]
+#define PORTIO_USART0_CTS_PIN (4U)
+#define PORTIO_USART0_CTS_PORT (gpioPortA)
+
+#define PORTIO_USART0_RTS_PIN (1U)
+#define PORTIO_USART0_RTS_PORT (gpioPortC)
+
+#define PORTIO_USART0_RX_PIN (6U)
+#define PORTIO_USART0_RX_PORT (gpioPortA)
+
+#define PORTIO_USART0_TX_PIN (5U)
+#define PORTIO_USART0_TX_PORT (gpioPortA)
+
+#define HAL_USART0_ENABLE (1)
+
 #define PORTIO_USART0_CTS_PIN                         (2U)
 #define PORTIO_USART0_CTS_PORT                        (gpioPortD)
 
@@ -254,6 +296,12 @@
 #define BSP_USART0_RTS_PIN                            (1U)
 #define BSP_USART0_RTS_PORT                           (gpioPortC)
 
+#define HAL_USART0_RX_QUEUE_SIZE (128UL)
+#define HAL_USART0_BAUD_RATE (115200UL)
+#define HAL_USART0_RXSTOP (16UL)
+#define HAL_USART0_RXSTART (16UL)
+#define HAL_USART0_TX_QUEUE_SIZE (128UL)
+#define HAL_USART0_FLOW_CONTROL (HAL_USART_FLOW_CONTROL_HWUART)
 // [USART0]$
 
 // $[USART1]
@@ -287,7 +335,7 @@
 // [USART2]$
 
 // $[VCOM]
-
+#define HAL_VCOM_ENABLE (1)
 #define BSP_VCOM_ENABLE_PIN                           (3U)
 #define BSP_VCOM_ENABLE_PORT                          (gpioPortD)
 
@@ -297,6 +345,7 @@
 // [VUART]$
 
 // $[WDOG]
+#define HAL_WDOG_ENABLE (0)
 // [WDOG]$
 
 #if defined(_SILICON_LABS_MODULE)
