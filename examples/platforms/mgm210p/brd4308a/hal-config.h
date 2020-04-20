@@ -50,7 +50,6 @@
 #define BSP_CLK_LFXO_INIT                              CMU_LFXOINIT_DEFAULT
 #define BSP_CLK_LFXO_FREQ                             (32768U)
 #define BSP_CLK_LFXO_CTUNE                            (79U)
-#define BSP_CLK_HFXO_FREQ (38400000UL)
 #define BSP_CLK_HFXO_INIT CMU_HFXOINIT_DEFAULT
 // [CMU]$
 
