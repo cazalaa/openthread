@@ -41,6 +41,7 @@ DIST_SUBDIRS                            = \
     gp712                                 \
     jn5189                                \
     kw41z                                 \
+    mgm210p                               \
     nrf528xx                              \
     simulation                            \
     qpg6095                               \
@@ -92,6 +93,10 @@ endif
 
 if OPENTHREAD_PLATFORM_KW41Z
 SUBDIRS                                += kw41z
+endif
+
+if OPENTHREAD_PLATFORM_MGM210P
+SUBDIRS                                += mgm210p
 endif
 
 if OPENTHREAD_PLATFORM_NRF528XX
