@@ -36,7 +36,7 @@ EFR32_BOARD_DIR = $(shell echo $(BOARD) | tr A-Z a-z)
 
 SDK_SRC_DIR = $(top_srcdir)/third_party/silabs/gecko_sdk_suite/v2.7
 
-$(top_builddir)/examples/platforms/efr32mg21/libopenthread-mgm210p.a:
+$(top_builddir)/examples/platforms/mgm210p/libopenthread-mgm210p.a:
 	(cd $(top_builddir)/examples/platforms/mgm210p/ && $(MAKE) $(AM_MAKEFLAGS) libopenthread-mgm210p.a )
 
 bin_PROGRAMS                                                                  = \
