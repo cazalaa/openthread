@@ -194,14 +194,15 @@ SILABS_EFR32MG21_SOURCES                                                        
     gecko_sdk_suite/v2.7/util/third_party/mbedtls/sl_crypto/src/se_management.c                 \
     $(NULL)
 
-SILABS_MGM210P_SOURCES                                                                      = \
-	 gecko_sdk_suite/v2.7/platform/Device/SiliconLabs/MGM21/Source/system_mgm21.c        \
-	 gecko_sdk_suite/v2.7/platform/Device/SiliconLabs/MGM21/Source/GCC/startup_mgm21.c   \
-	 gecko_sdk_suite/v2.7/platform/emlib/src/em_se.c                                             \
-	 gecko_sdk_suite/v2.7/util/third_party/mbedtls/sl_crypto/src/se_trng.c                       \
-	 gecko_sdk_suite/v2.7/util/third_party/mbedtls/sl_crypto/src/se_aes.c                        \
-	 gecko_sdk_suite/v2.7/util/third_party/mbedtls/sl_crypto/src/se_management.c                 \
-	 $(NULL)
+SILABS_MGM210P_SOURCES                                                                      = 	\
+    gecko_sdk_suite/v2.7/platform/Device/SiliconLabs/MGM21/Source/system_mgm21.c        	\
+    gecko_sdk_suite/v2.7/platform/Device/SiliconLabs/MGM21/Source/GCC/startup_mgm21.c   	\
+    gecko_sdk_suite/v2.7/hardware/kit/common/drivers/retargetserial.c                        	\
+    gecko_sdk_suite/v2.7/platform/emlib/src/em_se.c                                             \
+    gecko_sdk_suite/v2.7/util/third_party/mbedtls/sl_crypto/src/se_trng.c                       \
+    gecko_sdk_suite/v2.7/util/third_party/mbedtls/sl_crypto/src/se_aes.c                        \
+    gecko_sdk_suite/v2.7/util/third_party/mbedtls/sl_crypto/src/se_management.c                 \
+    $(NULL)
 
 libsilabs_efr32mg12_sdk_a_CPPFLAGS                                                            = \
     $(COMMONCPPFLAGS)                                                                           \
